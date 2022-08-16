@@ -10,6 +10,10 @@ const TaskZone =  () =>{
         getTask();
     }, [])
 
+    useEffect(() =>{
+        console.log(taskText);
+    }, [taskText]);
+
     const getTask = ()=>{
         const taskList = collection(db, "task");
         getDocs(taskList)
@@ -26,7 +30,7 @@ const TaskZone =  () =>{
     return(
         <div className="taskzone">
             {taskText.map((task)=>(
-                <TaskCreator taskText={task.data.taskName} />
+                <TaskCreator taskText={task.data.taskName.input}/>
         ) )}
         </div>
     )
