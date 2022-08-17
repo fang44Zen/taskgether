@@ -1,7 +1,7 @@
 import {addDoc, collection} from "firebase/firestore"
 import { useState } from "react";
 import { db } from "../../firebase/firebase-config";
-
+import './task-add-bar.css'
 
 const TaskAddBar = () =>{
     const [input, setInput] = useState('');
@@ -28,10 +28,15 @@ const TaskAddBar = () =>{
     }
 
     return(
-        <div className="input-zone">
-            <input type="text"  onChange={readInput} value={input}  onKeyDown={handleEnterKey}/>
-            <button onClick={addTask}>Add</button> 
-        </div>
+        // <div className="add-bar-style">
+            
+            <div className="input-zone">
+                <input type="text"  onChange={readInput} value={input}  className='input-style' onKeyDown={handleEnterKey}/>
+                <button onClick={addTask} className='add-button-style'>Add</button> 
+            </div> 
+            
+            
+     //</div> 
     )
 }
 
