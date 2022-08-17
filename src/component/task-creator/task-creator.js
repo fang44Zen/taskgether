@@ -1,11 +1,11 @@
+import './task-creator.css';
 
-
-const TaskCreator = ({taskText})=>{
+const TaskCreator = ({taskText, clickDelete, taskId})=>{
     return(
-        <div>
+        <div className="list-style">
             <p>{taskText}</p>
-            <button>modify</button>
-            <button>delete</button>
+            <button >modify</button>
+            <button onClick={clickDelete}>delete</button>
         </div>
     )
 }

@@ -1,12 +1,12 @@
-import {doc, setDoc} from "firebase/firestore"
+import {addDoc, collection} from "firebase/firestore"
 import { useState } from "react";
 import { db } from "../../firebase/firebase-config";
 
 
 const TaskAddBar = () =>{
     const [input, setInput] = useState('');
-    const [task, setTask] = useState([]);
-    const [taskNumber, setTaskNumber] = useState(0);
+    
+    
 
     const readInput =(e) =>{
         const txt = e.target.value;
@@ -14,16 +14,11 @@ const TaskAddBar = () =>{
     }
 
     const addTask = async ()=>{
-        setTaskNumber(taskNumber+1);
-        const newTask = {
-            id: {taskNumber},
-            taskName: {input},
+        const docRef = await addDoc(collection(db, "tasks"),{
+            taskName: input,
             isCompleted: false,
-         }
-        setTask([...task, newTask]);
+        });
         setInput('');
-        
-        await setDoc(doc(db, "task", `task: ${taskNumber}`),newTask);
     }
 
     const handleEnterKey = (e) =>{

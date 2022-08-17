@@ -1,4 +1,4 @@
-import { doc, onSnapshot,  collection,query, getDocs} from "firebase/firestore";
+import { doc, onSnapshot,  collection, deleteDoc} from "firebase/firestore";
 import TaskCreator from "../task-creator/task-creator";
 import { db } from "../../firebase/firebase-config";
 import {  useEffect, useState } from "react";
@@ -6,32 +6,23 @@ import {  useEffect, useState } from "react";
 const TaskZone =  () =>{
     const [taskText, setTaskText] = useState([]);
 
-    useEffect(()=>{
-        getTask();
-    }, [])
-
-    useEffect(() =>{
-        console.log(taskText);
-    }, [taskText]);
-
-    const getTask = ()=>{
-        const taskList = collection(db, "task");
-        getDocs(taskList)
-        .then(response =>{
-            const task = response.docs.map(doc =>({
-                data: doc.data(),
-                id : doc.id,
-            }))
-            setTaskText(task);
-        })
-        .catch(error => console.log("impossible de lire la db"))
-    }
+    useEffect(()=>
+        onSnapshot(collection(db, "tasks"), (snapshot) =>
+            setTaskText(snapshot.docs.map((doc) => ({
+                id: doc.id,
+                task: doc.data(),
+            })))
+        ), []);
 
     return(
         <div className="taskzone">
+            
             {taskText.map((task)=>(
-                <TaskCreator taskText={task.data.taskName.input}/>
+                <li key={task.id}>
+                    <TaskCreator taskText={task.task.taskName} clickDelete={ () => deleteDoc(doc(db, "tasks", task.id))}/>
+               </li>
         ) )}
+        
         </div>
     )
 }
