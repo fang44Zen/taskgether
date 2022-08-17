@@ -13,18 +13,18 @@ const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
 
     const clickCancelMod = () =>{
         setOnModifying(false)
-        setInputValue(taskText)
+        setInputValue(taskText || "")
     }
 
     const readInput = (e) =>{
         const txt = e.target.value
-        setInputValue(txt)
+        setInputValue(txt || "")
     }
 
     const clickAcceptMod = async (id) =>{
         const textTaskRef = doc(db, "tasks", id)
         await updateDoc(textTaskRef, {
-            taskName: inputValue
+            taskName: `${inputValue}` 
         });
         setOnModifying(false)
     }
@@ -42,8 +42,8 @@ const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
     }else{
         return(
         <div className="list-style" >
-            <input type="text" onChange={readInput}  value={inputValue} className='text-list-style'/>
-            <button onClick={()=>clickAcceptMod(getId)}>accept</button>
+            <input type="text" onChange={readInput}  defaultValue={inputValue } className='text-list-style'/>
+            <button  onClick={()=>clickAcceptMod(getId)}>accept</button>
             <button onClick={clickCancelMod}>cancel</button>
         </div>
         )
