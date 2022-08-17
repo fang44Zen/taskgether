@@ -43,7 +43,8 @@ const TaskZone =  () =>{
                     taskText={task.task.taskName} 
                     styleText={task.task.isCompleted ? 'task-done': 'text-list-style'}
                     clickDelete={() => delTask(task.id)}
-                    onCheck={(e) =>setCheck(e,task.id)}/>
+                    onCheck={(e) =>setCheck(e,task.id)}
+                    getId={task.id}/>
                </li> 
                ) )}
         
