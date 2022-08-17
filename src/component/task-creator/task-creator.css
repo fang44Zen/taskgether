@@ -2,3 +2,12 @@
     display: flex;
     justify-content: center;
 }
+
+.text-list-style{
+    font-weight: bold;
+}
+
+.task-done{
+    text-decoration: line-through;
+    font-weight: lighter; 
+}
