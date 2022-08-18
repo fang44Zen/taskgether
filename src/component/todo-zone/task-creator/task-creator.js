@@ -1,6 +1,6 @@
 import { doc, updateDoc } from 'firebase/firestore';
 import { useState } from 'react';
-import { db } from '../../firebase/firebase-config';
+import { db } from '../../../firebase/firebase-config';
 import './task-creator.css';
 
 const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
@@ -22,11 +22,19 @@ const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
     }
 
     const clickAcceptMod = async (id) =>{
-        const textTaskRef = doc(db, "tasks", id)
-        await updateDoc(textTaskRef, {
-            taskName: `${inputValue}` 
-        });
-        setOnModifying(false)
+        if(inputValue.length>=1){
+            const textTaskRef = doc(db, "tasks", id)
+            await updateDoc(textTaskRef, {
+                taskName: `${inputValue}` 
+            });
+            setOnModifying(false)
+        }
+    }
+
+    const handleEnterKey = (e) =>{
+        if(e.key === 'Enter'){
+          clickAcceptMod(getId);
+        }
     }
 
     if(!isOnModifying){
@@ -42,7 +50,7 @@ const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
     }else{
         return(
         <div className="list-style" >
-            <input type="text" onChange={readInput}  defaultValue={inputValue } className='text-list-style'/>
+            <input type="text" onChange={readInput}  defaultValue={inputValue} onKeyDown={handleEnterKey} className='text-list-style'/>
             <button  onClick={()=>clickAcceptMod(getId)}>accept</button>
             <button onClick={clickCancelMod}>cancel</button>
         </div>

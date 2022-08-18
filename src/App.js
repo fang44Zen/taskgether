@@ -1,15 +1,14 @@
 
 import './App.css';
-import TaskAddBar from './component/task-add-bar/task-add-bar';
+import TaskAddBar from './component/todo-zone/task-add-bar/task-add-bar';
 
-import TaskZone from './component/task-zone/task-zone';
+import TaskZone from './component/todo-zone/task-zone/task-zone';
+import TodoZone from './component/todo-zone/todo-zone.component';
 
 function App() {
   return (
     <div className="App">
-      
-        <TaskAddBar />
-        <TaskZone />
+      <TodoZone />
         
     </div>
   );
