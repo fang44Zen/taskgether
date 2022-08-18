@@ -1,13 +1,43 @@
 .list-style{
-    display: flex;
-    justify-content: center;
+   display: flex;
+   background-color: white;
+   margin-bottom: 15px;
+   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 2px;
+
 }
 
 .text-list-style{
-    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    font-size: 18px;
+    background-color: white;
+    margin: auto;
 }
 
 .task-done{
     text-decoration: line-through;
     font-weight: lighter; 
+}
+.button-task-style{
+    width: 22px;
+    height: 22px;
+    margin: auto;
+    margin-right: 3px;
+    margin-left: 1px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 4px;
+    border: none;
+    padding: 0px;
+}
+.material-symbols-outlined{
+    font-size: 22px !important;
+}
+.edit-button-style{
+    background-color: #36AE7C;
+}
+.delete-button-style{
+    background-color: #EB5353;
+    
 }

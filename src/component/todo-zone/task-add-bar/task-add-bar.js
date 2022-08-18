@@ -40,13 +40,13 @@ const TaskAddBar = () =>{
     return(
         
             <div className="add-bar-style">
-            <div className={addButtonVisible?"input-zone":"input-zone empty-input"}>
-                <input type="text"  onChange={readInput} value={input}  className='input-style ' onKeyDown={handleEnterKey}/>
-                
-            </div> 
-            <button onClick={addTask} className={addButtonVisible?"add-button-style":'add-button-hidden'}>
-                <span class="material-symbols-outlined">add_circle</span>
-            </button> 
+                <div className={addButtonVisible?"input-zone":"input-zone empty-input"}>
+                    <input type="text"  onChange={readInput} value={input}  className='input-style ' onKeyDown={handleEnterKey}/>
+                    
+                </div> 
+                <button onClick={addTask} className={addButtonVisible?"add-button-style":'add-button-hidden'}>
+                    <span class="material-symbols-outlined">add_circle</span>
+                </button> 
             </div>
             
      

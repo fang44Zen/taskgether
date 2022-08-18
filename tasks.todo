@@ -1,0 +1,21 @@
+ajouter task:    ctrl+enter
+valider task: alt+d
+
+fonctions de l'app todo:
+    ☐ Créer des groupes/sous liste, exemple exo de muscu 4x12 tractions, 4 taches écritent "12 traction" dans un groupe nommé traction.
+    ☐ taches cliquables pour avoir plus d'option, exemple créer un groupe, copier la tache, ajouter une note ect...
+    ☐ fonction de rappel
+    ☐ ajouter un code couleur si besoin, pour repéré les taches en rapport entre elle
+    ☐ ajouter la possibilité d'avoir une date/heure
+    ☐ connecter des utilisateur
+    ☐ Quand les menues seront disponible, créer des groupes de taches
+    ☐ Uniquement l'utilisateur en question peut voir ses propre taches
+    ☐ menu pour ajouter des images/icones, pour illustrer les taches, l'utilisateur pour aussi ajouter ses propres ullistration/photo à codition que le fichier respect le poid et la taille requis.
+    ☐ menu déroulant pour trier les listes, afficher tout, afficher en cour, afficher terminé.
+    ☐ On verra ensuite pour tout ce qui est public, social, ect...
+
+UI todo:
+    ☐ le curseur change quand il passe sur une tache (ou montrer à l'utilisateur qu'elle est cliquable)
+    ☐ tous les boutons doivent avoir une description de leurs action on le curseur passe au dessus
+    ☐ se renseigner sur les querries pour l'ui version mobile, pc, tablette ect...
+    ☐ ajout d'animation, d'ombrage, de son ect...

@@ -43,16 +43,20 @@ const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
             <div className="list-style" >
                 <input type="checkbox" onClick={onCheck} />
                 <p className={styleText}>{taskText}</p>
-                <button onClick={clickModify}>modify</button>
-                <button onClick={clickDelete}>delete</button>
+                <button  className='button-task-style  edit-button-style' onClick={clickModify}>
+                    <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button  className='button-task-style delete-button-style' onClick={clickDelete}>
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
             </div>
         )
     }else{
         return(
         <div className="list-style" >
             <input type="text" onChange={readInput}  defaultValue={inputValue} onKeyDown={handleEnterKey} className='text-list-style'/>
-            <button  onClick={()=>clickAcceptMod(getId)}>accept</button>
-            <button onClick={clickCancelMod}>cancel</button>
+            <button className='button-task-style' onClick={()=>clickAcceptMod(getId)}>accept</button>
+            <button  className='button-task-style' onClick={clickCancelMod}>cancel</button>
         </div>
         )
 }
