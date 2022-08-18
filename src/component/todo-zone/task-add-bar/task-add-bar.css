@@ -33,15 +33,18 @@ input:focus{
 .empty-input{
     border-radius: 9px 9px 9px 9px;
 }
-.add-button-hidden{
-    visibility: hidden;
+.add-button-disabled{
+    background-color: #DFDFDE;
+    border: none;
+    margin: 16px 0px;
+    border-radius: 0px 9px 9px 0px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(223, 223, 222, 1) 0px 0px 0px 1px;
 }
 .add-button-style{
     background-color: #554994;
     border: none;
     margin: 16px 0px;
     border-radius: 0px 9px 9px 0px;
-    /* box-shadow: rgba(0, 0, 0, 0.12) 1.95px 1.95px 2.6px; */
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(85, 73, 148, 1) 0px 0px 0px 1px;
 }
 .material-symbols-outlined{

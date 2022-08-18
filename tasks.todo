@@ -13,9 +13,18 @@ fonctions de l'app todo:
     ☐ menu pour ajouter des images/icones, pour illustrer les taches, l'utilisateur pour aussi ajouter ses propres ullistration/photo à codition que le fichier respect le poid et la taille requis.
     ☐ menu déroulant pour trier les listes, afficher tout, afficher en cour, afficher terminé.
     ☐ On verra ensuite pour tout ce qui est public, social, ect...
+    ☐ Classer les taches par d'ate d'ajout
+    ☐ popup pour demander à l'utilisateur si il est sur de vouloir supprimer la tache, option "ne plus me demander"
+    ☐ Quand le menu sera en place, option de personnaliser ses taches en lui ajouter des boutons ou non, ex: ajouter bouton suppr, créer groupe, édit ect..
+    ainsi ajoutant la possibilité de tout supprimer, d'avoir une task propre et toutes les options n'auront pas de raccourcis seront dispo dans le menu en cliquant dessus.
+    
 
 UI todo:
     ☐ le curseur change quand il passe sur une tache (ou montrer à l'utilisateur qu'elle est cliquable)
     ☐ tous les boutons doivent avoir une description de leurs action on le curseur passe au dessus
     ☐ se renseigner sur les querries pour l'ui version mobile, pc, tablette ect...
     ☐ ajout d'animation, d'ombrage, de son ect...
+
+pour demain:
+    ☐ changer la checkbox en icone
+    ☐ s'occuper des petites erreur dans la console

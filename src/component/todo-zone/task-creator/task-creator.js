@@ -2,6 +2,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { useState } from 'react';
 import { db } from '../../../firebase/firebase-config';
 import './task-creator.css';
+import 'animate.css';
 
 const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
     const [isOnModifying, setOnModifying] = useState(false);
@@ -54,9 +55,15 @@ const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
     }else{
         return(
         <div className="list-style" >
-            <input type="text" onChange={readInput}  defaultValue={inputValue} onKeyDown={handleEnterKey} className='text-list-style'/>
-            <button className='button-task-style' onClick={()=>clickAcceptMod(getId)}>accept</button>
-            <button  className='button-task-style' onClick={clickCancelMod}>cancel</button>
+            
+            <span className='anime-border animate__animated animate__jello animate__infinite material-symbols-outlined'>edit</span>
+            <input type="text" onChange={readInput}  defaultValue={inputValue} onKeyDown={handleEnterKey} className='modify-input-style text-list-style'/>
+            <button className='button-task-style' onClick={()=>clickAcceptMod(getId)}>
+                <span class="material-symbols-outlined edit-button-style">check_small</span>
+            </button>
+            <button  className='button-task-style' onClick={clickCancelMod}>
+                <span class="material-symbols-outlined delete-button-style">cancel</span>
+            </button>
         </div>
         )
 }

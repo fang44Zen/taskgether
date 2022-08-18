@@ -4,6 +4,7 @@ import { db } from "../../../firebase/firebase-config";
 import {  useEffect, useState } from "react";
 import '../task-creator/task-creator.css';
 import './task-zone.css';
+import './../task-creator/task-creator.css';
 
 const TaskZone =  () =>{
     const [taskText, setTaskText] = useState([]);
@@ -42,7 +43,7 @@ const TaskZone =  () =>{
                 
                     <TaskCreator 
                     taskText={task.task.taskName} 
-                    styleText={task.task.isCompleted ? 'task-done': 'text-list-style'}
+                    styleText={task.task.isCompleted ? 'task-done text-list-style': 'text-list-style'}
                     clickDelete={() => delTask(task.id)}
                     onCheck={(e) =>setCheck(e,task.id)}
                     getId={task.id}/>
