@@ -1,15 +1,18 @@
 
 import './App.css';
-import TaskAddBar from './component/todo-zone/task-add-bar/task-add-bar';
-
-import TaskZone from './component/todo-zone/task-zone/task-zone';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TodoZone from './component/todo-zone/todo-zone.component';
+import NavigationBar from './component/navigation-bar/navigation-bar';
 
 function App() {
   return (
     <div className="App">
-      <TodoZone />
-        
+      <BrowserRouter>
+      <NavigationBar />
+        <Routes>
+          <Route path="/todo-app" element={<TodoZone />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

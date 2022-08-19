@@ -24,7 +24,10 @@ UI todo:
     ☐ tous les boutons doivent avoir une description de leurs action on le curseur passe au dessus
     ☐ se renseigner sur les querries pour l'ui version mobile, pc, tablette ect...
     ☐ ajout d'animation, d'ombrage, de son ect...
+    ☐ Comportement des boutons(type couleur, anim ect...) et autre quand le curseur passer au dessus ou clic
 
-pour demain:
-    ✔ changer la checkbox en icone @done (19/08/2022, 10:56:33)
-    ☐ s'occuper des petites erreur dans la console
+    pour demain: 
+        ☐ fonction de login/logout @critical 
+        ☐ avec et sans google @low 
+        ☐ chaque utilisateur a ses propres taches et ne sont visble que par lui uniquement @critical 
+

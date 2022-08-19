@@ -41,16 +41,16 @@ const TaskCreator = ({taskText, clickDelete, styleText, getId, iconCheck, checkB
     if(!isOnModifying){
         return(
         
-            <div className="list-style" >
+            <div className="list-style"  >
                  <button className={`button-task-style ${buttonCheckStyle}`} onClick={checkButton}>
-                    <span class="material-symbols-outlined">{iconCheck}</span>
+                    <span className="material-symbols-outlined">{iconCheck}</span>
                 </button>
                 <p className={styleText}>{taskText}</p>
                 <button  className='button-task-style  edit-button-style' onClick={clickModify}>
-                    <span class="material-symbols-outlined">edit</span>
+                    <span className="material-symbols-outlined">edit</span>
                 </button>
                 <button  className='button-task-style delete-button-style' onClick={clickDelete}>
-                    <span class="material-symbols-outlined">delete</span>
+                    <span className="material-symbols-outlined">delete</span>
                 </button>
             </div>
         )
@@ -61,10 +61,10 @@ const TaskCreator = ({taskText, clickDelete, styleText, getId, iconCheck, checkB
             <span className='anime-border animate__animated animate__jello animate__infinite material-symbols-outlined'>edit</span>
             <input type="text" onChange={readInput}  defaultValue={inputValue} onKeyDown={handleEnterKey} className='modify-input-style text-list-style'/>
             <button className='button-task-style' onClick={()=>clickAcceptMod(getId)}>
-                <span class="material-symbols-outlined edit-button-style">check_small</span>
+                <span className="material-symbols-outlined edit-button-style">check_small</span>
             </button>
             <button  className='button-task-style' onClick={clickCancelMod}>
-                <span class="material-symbols-outlined delete-button-style">cancel</span>
+                <span className="material-symbols-outlined delete-button-style">cancel</span>
             </button>
         </div>
         )

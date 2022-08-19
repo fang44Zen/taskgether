@@ -40,17 +40,16 @@ const TaskZone =  () =>{
         <div className="taskzone">
             
             {taskText.map((task)=>(
-                
-                
-                    <TaskCreator 
-                        taskText={task.task.taskName} 
-                        styleText={task.task.isCompleted ? 'task-done text-list-style': 'text-list-style'}
-                        iconCheck={task.task.isCompleted?'check_circle':'radio_button_unchecked'}
-                        buttonCheckStyle={task.task.isCompleted?'check-button-checked':'check-button-unchecked'}
-                        clickDelete={() => delTask(task.id)}
-                        checkButton={() => setCheck(task.id)}
-                        getId={task.id}/>
-               
+                <div key={task.id}>
+                <TaskCreator 
+                    taskText={task.task.taskName} 
+                    styleText={task.task.isCompleted ? 'task-done text-list-style': 'text-list-style'}
+                    iconCheck={task.task.isCompleted?'check_circle':'radio_button_unchecked'}
+                    buttonCheckStyle={task.task.isCompleted?'check-button-checked':'check-button-unchecked'}
+                    clickDelete={() => delTask(task.id)}
+                    checkButton={() => setCheck(task.id)}
+                    getId={task.id}/>
+               </div>
                ) )}
         
         </div>

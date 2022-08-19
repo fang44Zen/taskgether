@@ -22,7 +22,7 @@ const TaskAddBar = () =>{
     const addTask = async ()=>{
         if(input.length>=1){
             
-            const docRef = await addDoc(collection(db, "tasks"),{
+            await addDoc(collection(db, "tasks"),{
                 taskName: input,
                 isCompleted: false,
             });
@@ -45,7 +45,7 @@ const TaskAddBar = () =>{
                     
                 </div> 
                 <button onClick={addTask} className={addButtonVisible?"add-button-style":'add-button-disabled'}>
-                    <span class="material-symbols-outlined">add_circle</span>
+                    <span className="material-symbols-outlined">add_circle</span>
                 </button> 
             </div>
             
