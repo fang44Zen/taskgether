@@ -4,7 +4,7 @@ import { db } from '../../../firebase/firebase-config';
 import './task-creator.css';
 import 'animate.css';
 
-const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
+const TaskCreator = ({taskText, clickDelete, styleText, getId, iconCheck, checkButton, buttonCheckStyle})=>{
     const [isOnModifying, setOnModifying] = useState(false);
     const [inputValue, setInputValue] = useState(taskText);
 
@@ -42,7 +42,9 @@ const TaskCreator = ({taskText, clickDelete, onCheck, styleText, getId})=>{
         return(
         
             <div className="list-style" >
-                <input type="checkbox" onClick={onCheck} />
+                 <button className={`button-task-style ${buttonCheckStyle}`} onClick={checkButton}>
+                    <span class="material-symbols-outlined">{iconCheck}</span>
+                </button>
                 <p className={styleText}>{taskText}</p>
                 <button  className='button-task-style  edit-button-style' onClick={clickModify}>
                     <span class="material-symbols-outlined">edit</span>

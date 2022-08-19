@@ -2,3 +2,14 @@
     width: 880px;
     margin: auto;
 }
+.check-button-checked{
+    margin-right: 9px;
+    margin-left: 4px;
+    background-color: #554994;
+}
+.check-button-unchecked{
+    margin-right: 9px;
+    margin-left: 4px;
+    background-color: #B1E1FF;
+    
+}

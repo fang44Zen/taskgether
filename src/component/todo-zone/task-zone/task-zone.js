@@ -17,18 +17,19 @@ const TaskZone =  () =>{
             })))
         ), []);
     
-    const setCheck= async ( e, id)=>{
-       const docRef = doc(db, "tasks", id);
-       if(e.target.checked){
-        await updateDoc(docRef, {
-            isCompleted: true
-           });
-       }else{
-        await updateDoc(docRef, {
-            isCompleted: false
-           });
-       }
+    const setCheck=  async (id)=>{
+        const docRef = doc(db, "tasks", id);
+        const filteredTask = taskText.find(task => task.id === id)
        
+            if(filteredTask.task.isCompleted === false){
+                await updateDoc(docRef, {
+                    isCompleted: true
+                });
+            }else{
+                await updateDoc(docRef, {
+                    isCompleted: false
+                });
+            }
     }
 
     const delTask =async (id)=>{
@@ -42,11 +43,13 @@ const TaskZone =  () =>{
                 
                 
                     <TaskCreator 
-                    taskText={task.task.taskName} 
-                    styleText={task.task.isCompleted ? 'task-done text-list-style': 'text-list-style'}
-                    clickDelete={() => delTask(task.id)}
-                    onCheck={(e) =>setCheck(e,task.id)}
-                    getId={task.id}/>
+                        taskText={task.task.taskName} 
+                        styleText={task.task.isCompleted ? 'task-done text-list-style': 'text-list-style'}
+                        iconCheck={task.task.isCompleted?'check_circle':'radio_button_unchecked'}
+                        buttonCheckStyle={task.task.isCompleted?'check-button-checked':'check-button-unchecked'}
+                        clickDelete={() => delTask(task.id)}
+                        checkButton={() => setCheck(task.id)}
+                        getId={task.id}/>
                
                ) )}
         
