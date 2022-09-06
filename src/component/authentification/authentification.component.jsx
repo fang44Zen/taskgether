@@ -1,7 +1,7 @@
 
 
 
- const SignIn = () =>{
+ const Authentification = () =>{
     return(
         <div>
             <h1>Sign in page</h1>
@@ -9,4 +9,4 @@
     )
 }
 
-export default SignIn;
+export default Authentification;

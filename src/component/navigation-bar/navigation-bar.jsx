@@ -12,7 +12,7 @@ const NavigationBar = () =>{
             <NavLink className="center-link" to='/home'>Home</NavLink>
             <NavLink className="center-link" to='/todo-app'>Todo</NavLink>
             <NavLink className="center-link" to='/pomodoro-app'>Pomodoro</NavLink>
-            <NavLink className="center-link signin-link" to='/sign-in'>Sign in</NavLink>
+            <NavLink className="center-link signin-link" to='/auth'>Sign in</NavLink>
            
             <Outlet />
         </div>
