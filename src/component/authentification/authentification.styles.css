@@ -12,11 +12,12 @@
     border-radius: 8px;
     
 }
-.material-symbols-outlined{
+
+.auth-icon{
     /* color: black;
     font-size: 50px !important; */
 }
-.connect-account form{
-    display: flex;
-    flex-wrap: wrap;
+
+.authentification-main FormInput{
+    background-color: aqua;
 }
