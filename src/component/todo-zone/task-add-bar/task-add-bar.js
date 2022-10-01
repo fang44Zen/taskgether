@@ -45,7 +45,7 @@ const TaskAddBar = () =>{
                     
                 </div> 
                 <button onClick={addTask} className={addButtonVisible?"add-button-style":'add-button-disabled'}>
-                    <span className="material-symbols-outlined">add_circle</span>
+                    <span className="material-symbols-outlined icon-add-button">add_circle</span>
                 </button> 
             </div>
             

@@ -47,7 +47,7 @@ input:focus{
     border-radius: 0px 9px 9px 0px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(85, 73, 148, 1) 0px 0px 0px 1px;
 }
-.material-symbols-outlined{
+.icon-add-button{
     color: white;
     font-size: 28px  !important;
 }

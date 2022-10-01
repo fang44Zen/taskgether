@@ -43,14 +43,14 @@ const TaskCreator = ({taskText, clickDelete, styleText, getId, iconCheck, checkB
         
             <div className="list-style"  >
                  <button className={`button-task-style ${buttonCheckStyle}`} onClick={checkButton}>
-                    <span className="material-symbols-outlined">{iconCheck}</span>
+                    <span className="material-symbols-outlined icon-task">{iconCheck}</span>
                 </button>
                 <p className={styleText}>{taskText}</p>
                 <button  className='button-task-style  edit-button-style' onClick={clickModify}>
-                    <span className="material-symbols-outlined">edit</span>
+                    <span className="material-symbols-outlined icon-task">edit</span>
                 </button>
                 <button  className='button-task-style delete-button-style' onClick={clickDelete}>
-                    <span className="material-symbols-outlined">delete</span>
+                    <span className="material-symbols-outlined icon-task">delete</span>
                 </button>
             </div>
         )

@@ -5,6 +5,7 @@ import TodoZone from './component/todo-zone/todo-zone.component';
 
 import NavigationBar from './component/navigation-bar/navigation-bar';
 import Authentification from './component/authentification/authentification.component';
+import MenuToHide from './tests components/menu-to-hide.component';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/todo-app" element={<TodoZone />} />
           <Route path="/auth" element={<Authentification />} />
+          <Route path='pomodoro-app' element={<MenuToHide/>} />
         </Routes>
       </BrowserRouter>
     </div>
