@@ -9,9 +9,9 @@ import './authentification.styles.css'
                 <h1>Already have an account:</h1>
                 <form>
                     <span class="material-symbols-outlined auth-icon">mail</span>
-                    <FormInput label="Email" value=''/>
+                    <FormInput label="Email" value='' className="input-auth"/>
                     <span class="material-symbols-outlined auth-icon">lock</span>
-                    <FormInput label="Password" value="" />
+                    <FormInput label="Password" value=""/>
                     <button>Enter</button>
                 </form>
             </div>
