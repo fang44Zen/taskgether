@@ -1,3 +1,10 @@
+$white-bg: white;
+$light-text: #7F8487;
+
+@mixin border-shadow {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
 .authentification-main{
     display:flex;
     justify-content: space-evenly;
@@ -5,10 +12,10 @@
 }
 
 .connect-account{
-    background-color: white;
+    background-color: $white-bg;
     width: 450px;
     height: 750px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    @include border-shadow();
     border-radius: 8px;
     
 }
@@ -17,20 +24,40 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
 }
 
 .form-block{
-    
+    position: relative;
     &__input{
-       background-color: aqua;
-       font-size: 22px;
+      
+       font-size:32px;
         border-radius: 8px;
+        padding: 8px;
+        padding-top: 15px;
+        border: none;
+       outline: none; 
+        @include border-shadow();
+        &:valid ~ .form-block__label,
+        &:focus ~ .form-block__label {
+            transform: translate(10px) translateY(-10px);
+            font-size: 1.2em;
+            padding: 0px 10px;
+            background-color: $white-bg;
+        }
     }
     &__label{
-        position: absolute;
+       position: absolute;
         display: flex;
         align-items: center;
-        
+        pointer-events: none;
+        z-index: 1;
+        padding: 2px 2px 2px 8px;
+        top: 0;
+        font-size: 30px;
+        color: $light-text;
+        transition: 0.5s;
     }
+
 }
 
