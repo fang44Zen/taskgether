@@ -22,14 +22,12 @@
     border: none;
     height: 100%;
     width: 99%;
-    
-}
-input[type=text]{
     font-size: 26px;
+    &:focus{
+       outline: none; 
+    }
 }
-input:focus{
-    outline: none;
-}
+
 .empty-input{
     border-radius: 9px 9px 9px 9px;
 }

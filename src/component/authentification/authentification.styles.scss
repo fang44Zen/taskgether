@@ -13,6 +13,24 @@
     
 }
 .form-auth{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-block{
+    
+    &__input{
+       background-color: aqua;
+       font-size: 22px;
+        border-radius: 8px;
+    }
+    &__label{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        
+    }
 }
 

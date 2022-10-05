@@ -1,4 +1,4 @@
-import FormInput from '../modified basics components/input/form-input.component';
+
 import './authentification.styles.scss'
 
 
@@ -8,10 +8,20 @@ import './authentification.styles.scss'
             <div className="connect-account">
                 <h1>Already have an account:</h1>
                 <form className='form-auth'>
-                    
-                    <FormInput label={[<span class="material-symbols-outlined auth-icon">mail</span>, "Email"]} placeholder="Email"/>
-                    
-                    <FormInput label={[<span class="material-symbols-outlined auth-icon">lock</span>,"Password"]} placeholder="Password"/>
+                    <div className='form-block'>
+                        <label className='form-block__label'>
+                            <span class="material-symbols-outlined auth-icon">mail</span>
+                            Email
+                        </label>
+                        <input type="text" placeholder='Email' className='form-block__input'/>
+                    </div>
+                    <div className='form-block'>
+                        <label className='form-block__label'>
+                            <span class="material-symbols-outlined auth-icon">lock</span>
+                            Password
+                        </label>
+                        <input type="text" placeholder='Password' className='form-block__input'/>
+                    </div>
                     <button>Enter</button>
                 </form>
             </div>

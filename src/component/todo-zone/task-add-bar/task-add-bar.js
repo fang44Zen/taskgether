@@ -1,7 +1,7 @@
 import {addDoc, collection} from "firebase/firestore"
 import { useState } from "react";
 import { db } from "../../../firebase/firebase-config";
-import './task-add-bar.css'
+import './task-add-bar.scss'
 
 const TaskAddBar = () =>{
     const [input, setInput] = useState('');
