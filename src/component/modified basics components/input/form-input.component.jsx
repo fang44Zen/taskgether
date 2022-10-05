@@ -4,11 +4,8 @@ const FormInput = ({label, ...otherProps}) =>{
     return(
         
         <div className="group">
-            <input className="form-input" {...otherProps}/>
-
-            {label && (
-                <label className={`${otherProps.value.length ? "shrink": ''} form-input-label`}>{label}</label>
-            )}
+            <input className="group__input" {...otherProps}/>
+            <label className='group__label'>{label}</label>
         </div>
     )
 }
