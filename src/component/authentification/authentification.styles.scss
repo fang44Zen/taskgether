@@ -20,11 +20,25 @@ $light-text: #7F8487;
     
 }
 .form-auth{
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
+
+    .connect-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100px;
+        height: 32px;
+        font-size: 28px;
+        border: none;
+        background-color: #94DAFF;
+        // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 8px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
 }
 
 .form-block{

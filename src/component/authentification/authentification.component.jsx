@@ -23,7 +23,7 @@ import './authentification.styles.scss'
                             Password
                         </label>
                     </div>
-                    <button>Enter</button>
+                    <button className='connect-button'>Enter</button>
                 </form>
             </div>
             <div className="create-account">
