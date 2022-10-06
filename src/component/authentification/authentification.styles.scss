@@ -1,5 +1,7 @@
 $white-bg: white;
 $light-text: #7F8487;
+$dark-purple: #554994;
+$light-purple: #937DC2;
 
 @mixin border-shadow {
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -31,14 +33,16 @@ $light-text: #7F8487;
         display: flex;
         align-items: center;
         justify-content: center;
-        width:100px;
+        width:120px;
         height: 32px;
         font-size: 28px;
         border: none;
-        background-color: #94DAFF;
-        // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 8px;
+        background-color: $dark-purple;
+        color: white;
+        border-radius: 18px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     }
+    
 }
 
 .form-block{
@@ -75,3 +79,23 @@ $light-text: #7F8487;
 
 }
 
+.buttons-create-account{
+    display: flex;
+    gap: 15px;
+    &__bca{
+        width: 118px;
+        height: 42px;
+        font-size: 16px;
+        background-color: $dark-purple;
+        border-radius: 12px;
+        border: none;
+        color: white;
+    }
+    &__bCAWG{
+        width: 180px;
+        font-size: 16px;
+        border: none;
+        border-radius: 12px;
+        background-color: #BAABDA;
+    }
+}
