@@ -3,12 +3,17 @@ import './authentification.styles.scss';
 import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import {auth} from'../../firebase/firebase-config';
+import {auth, signInWithGooglePopup} from'../../firebase/firebase-config';
 
 
  const Authentification = () =>{
     const [emailUser, setEmailUser] = useState("");
     const [passUser, setPassUser] = useState("");
+
+    const logGoogleUser = async () =>{
+        const response = await signInWithGooglePopup();
+
+    }
 
     const readEmail = (e) => {
         const email = e.target.value;
@@ -87,7 +92,7 @@ import {auth} from'../../firebase/firebase-config';
                     </div>
                     <div className='buttons-create-account'>
                         <button className='buttons-create-account__bca' onClick={createAccountButton}>Create Acount</button>
-                        <button className='buttons-create-account__bCAWG'><FcGoogle />Connect with google</button>
+                        <button className='buttons-create-account__bCAWG' onClick={logGoogleUser}><FcGoogle />Connect with google</button>
                     </div>
                     
                 </form>
