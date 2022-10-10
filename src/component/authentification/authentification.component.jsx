@@ -2,8 +2,9 @@
 import './authentification.styles.scss';
 import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import {auth, signInWithGooglePopup} from'../../firebase/firebase-config';
+import { createUserWithEmailAndPassword} from 'firebase/auth';
+import {auth, signInWithGooglePopup, creatUserDocumentFromAuth} from'../../firebase/firebase-config';
+
 
 
  const Authentification = () =>{
@@ -11,7 +12,8 @@ import {auth, signInWithGooglePopup} from'../../firebase/firebase-config';
     const [passUser, setPassUser] = useState("");
 
     const logGoogleUser = async () =>{
-        const response = await signInWithGooglePopup();
+        const {user} = await signInWithGooglePopup();
+        creatUserDocumentFromAuth(user)
 
     }
 
