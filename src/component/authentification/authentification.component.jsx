@@ -68,9 +68,9 @@ import {auth, signInWithGooglePopup, creatUserDocumentFromAuth} from'../../fireb
                     <button className='connect-button'>Enter</button>
                 </form>
             </div>
+
             <div className="create-account">
                 <h1>Create an account:</h1>
-                
                 <form className='form-auth'>
                     <div className='form-block'>
                         <input type="text" className='form-block__input' required onChange={readEmail} value={emailUser} />
