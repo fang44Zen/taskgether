@@ -23,4 +23,19 @@ const firebaseConfig = {
   export const creatUserDocumentFromAuth = async (userAuth) =>{
     const userdocRef = doc(db, 'users', userAuth.uid);
     const userSnapShot = await getDoc(userdocRef);
+
+    if(!userSnapShot.exists()){
+      const {displayName, email} = userAuth;
+      const createdAt = new Date();
+      try{
+        await setDoc(userdocRef, {
+          displayName,
+          email,
+          createdAt
+        });
+      }catch(error){
+        console.log('error: ', error.message);
+      }
+    }
+    return userdocRef;
   }

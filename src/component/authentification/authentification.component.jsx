@@ -13,7 +13,8 @@ import {auth, signInWithGooglePopup, creatUserDocumentFromAuth} from'../../fireb
 
     const logGoogleUser = async () =>{
         const {user} = await signInWithGooglePopup();
-        creatUserDocumentFromAuth(user)
+        console.log(user.uid);
+        const userDocRef = await creatUserDocumentFromAuth(user)
 
     }
 
