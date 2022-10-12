@@ -2,8 +2,10 @@
 import './authentification.styles.scss';
 import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword} from 'firebase/auth';
-import {auth, signInWithGooglePopup, creatUserDocumentFromAuth} from'../../firebase/firebase-config';
+import { signInWithGooglePopup, 
+    creatUserDocumentFromAuth,
+    createAuthUserWithEmailAndPassword} from'../../firebase/firebase-config';
+import photoURL from '../../assets/utilisateur.png';
 
 const defaultFormField = {
     displayName: '',
@@ -28,6 +30,22 @@ const defaultFormField = {
         const userDocRef = await creatUserDocumentFromAuth(user);
     }
 
+    const handleSubmit = async (event) =>{
+        event.preventDefault();
+        if(password == confirmPassword){
+            try{
+                const {user} = await createAuthUserWithEmailAndPassword(email, password);
+                await creatUserDocumentFromAuth(user, {displayName,photoURL})
+            }catch(error){
+                console.log(error);
+            }
+            
+            
+        }else{
+            alert("wrong password");
+            return
+        }
+    }
     
     return(
         <div className='authentification-main'>
@@ -55,7 +73,7 @@ const defaultFormField = {
 
             <div className="create-account">
                 <h1>Create an account:</h1>
-                <form className='form-auth'>
+                <form className='form-auth' onSubmit={handleSubmit}>
                 <div className='form-block'>
                         <input type="text" className='form-block__input' required onChange={halderChange} name="displayName" value={displayName}/>
                         <label className='form-block__label'>
@@ -85,7 +103,7 @@ const defaultFormField = {
                         </label>
                     </div>
                     <div className='buttons-create-account'>
-                        <button className='buttons-create-account__bca' >Create Acount</button>
+                        <button className='buttons-create-account__bca' type='submit' >Create Acount</button>
                         <button className='buttons-create-account__bCAWG' onClick={logGoogleUser}><FcGoogle />Connect with google</button>
                     </div>
                     
