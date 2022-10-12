@@ -25,12 +25,13 @@ const firebaseConfig = {
     const userSnapShot = await getDoc(userdocRef);
 
     if(!userSnapShot.exists()){
-      const {displayName, email} = userAuth;
+      const {displayName, photoURL, email} = userAuth;
       const createdAt = new Date();
       try{
         await setDoc(userdocRef, {
           displayName,
           email,
+          photoURL,
           createdAt
         });
       }catch(error){
