@@ -7,12 +7,6 @@ $light-purple: #937DC2;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.authentification-main{
-    display:flex;
-    justify-content: space-evenly;
-    margin-top: 45px;
-}
-
 .connect-account{
     background-color: $white-bg;
     width: 450px;
@@ -41,6 +35,13 @@ $light-purple: #937DC2;
         color: white;
         border-radius: 18px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+    .google-connect{
+        width: 180px;
+        font-size: 16px;
+        border: none;
+        border-radius: 12px;
+        background-color: #BAABDA;
     }
     
 }
@@ -78,10 +79,12 @@ $light-purple: #937DC2;
     }
 
 }
-
-.buttons-create-account{
+.connect-buttons{
     display: flex;
     gap: 15px;
+}
+.buttons-create-account{
+    
     &__bca{
         width: 118px;
         height: 42px;
